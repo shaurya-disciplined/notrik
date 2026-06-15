@@ -23,7 +23,7 @@ export default function Navbar() {
     <>
       <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
         <nav
-          className={`pointer-events-auto relative transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-full px-6 md:px-10 py-3 flex items-center justify-between w-full max-w-5xl ${
+          className={`pointer-events-auto relative transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-full px-6 md:px-10 py-2 md:py-3 flex items-center justify-between w-full max-w-5xl ${
             scrolled
               ? "glass-panel shadow-lg"
               : "bg-transparent"
@@ -31,7 +31,7 @@ export default function Navbar() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
-            <img src="/fevi-con.png" alt="Notrik Icon" className="w-14 h-14 object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" />
+            <img src="/fevi-con.png" alt="Notrik Icon" className="w-10 h-10 md:w-14 md:h-14 object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-sm" />
             <span className="font-serif font-bold tracking-tight text-foreground text-4xl hidden sm:block">
               Notrik
             </span>
