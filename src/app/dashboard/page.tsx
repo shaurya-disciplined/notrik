@@ -441,15 +441,20 @@ export default function DashboardPage() {
                   </div>
                 </label>
 
-                <label className={`flex items-center gap-3.5 p-4 rounded-2xl cursor-pointer transition-all border-2 ${format === "Practice Quiz" ? "bg-white border-brand-3 shadow-md scale-[1.01]" : "bg-white/40 border-transparent hover:bg-white hover:border-black/10"}`}>
-                  <input type="radio" name="format" value="Practice Quiz" checked={format === "Practice Quiz"} onChange={(e) => setFormat(e.target.value)} className="hidden" />
+                <label 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    alert("The Practice Quiz feature is still incoming. Our developers are working hard to bring this in soon!");
+                  }}
+                  className={`flex items-center gap-3.5 p-4 rounded-2xl cursor-pointer transition-all border-2 bg-white/40 border-transparent hover:bg-white hover:border-black/10 opacity-60`}
+                >
+                  <input type="radio" name="format" value="Practice Quiz" disabled className="hidden" />
                   <span className="text-xl">✏️</span>
                   <div className="flex flex-col flex-1 min-w-0">
                     <span className="font-sans font-extrabold text-[14px] text-foreground leading-tight">Practice Quiz</span>
-                    <span className="font-sans text-[10px] text-foreground/45 mt-0.5 font-medium">Practice multiple choice questions</span>
+                    <span className="font-sans text-[10px] text-foreground/45 mt-0.5 font-medium">Coming soon...</span>
                   </div>
-                  <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${format === "Practice Quiz" ? "border-brand-3 bg-brand-3 text-white" : "border-foreground/25"}`}>
-                    {format === "Practice Quiz" && <div className="w-1.5 h-1.5 rounded-full bg-white"></div>}
+                  <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 border-foreground/25`}>
                   </div>
                 </label>
               </div>
@@ -492,6 +497,12 @@ export default function DashboardPage() {
               </>
             )}
           </button>
+
+          {isProcessing && (
+            <p className="mt-3 text-center font-sans text-xs text-foreground/50 font-medium animate-pulse">
+              If your document was too long, this may take a minute.
+            </p>
+          )}
 
           {errorMessage && (
             <div className="mt-4 p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-600 font-sans text-[13px] text-center">
