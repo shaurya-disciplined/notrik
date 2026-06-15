@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Notrik | AI Note Transformation",
   description: "Magical, premium AI note transformation. A glassmorphic experience.",
   icons: {
-    icon: '/fevi-con.png',
+    icon: '/logo-no-bg.png',
   },
 };
 
