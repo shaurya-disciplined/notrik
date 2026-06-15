@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "Sarah Connor",
+      "email": "sarah@example.com",
+      "plan": "pro"
+    }
+  ],
+  "notes": [
+    {
+      "id": "n1",
+      "userId": "u1",
+      "title": "Quantum Mechanics Basics",
+      "subject": "Physics",
+      "createdAt": "2026-06-08T10:00:00Z",
+      "content": "# Quantum Mechanics Basics\n\n## Wave-Particle Duality\nLight and matter exhibit properties of both waves and particles. This is a central concept of quantum mechanics.\n\n```mermaid\ngraph TD\n    A[Quantum Entities] --> B(Wave Properties)\n    A --> C(Particle Properties)\n    B --> D[Interference]\n    C --> E[Photoelectric Effect]\n```",
+      "status": "processed"
+    },
+    {
+      "id": "n2",
+      "userId": "u1",
+      "title": "Medical Anatomy - Heart",
+      "subject": "Biology",
+      "createdAt": "2026-06-09T14:30:00Z",
+      "content": "# The Human Heart\n\n> [!NOTE]\n> The heart is a muscular organ about the size of a fist, located just behind and slightly left of the breastbone.\n\n## Structure\n- Right Atrium\n- Right Ventricle\n- Left Atrium\n- Left Ventricle",
+      "status": "processed"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "f1",
+      "noteId": "n1",
+      "front": "What is wave-particle duality?",
+      "back": "The concept that quantum entities exhibit properties of both waves and particles."
+    }
+  ]
+}

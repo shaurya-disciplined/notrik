@@ -1,26 +1,244 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-brand-1: #0f172a; /* Slate 900 (Deep Navy) */
+  --color-brand-2: #1e3a8a; /* Blue 900 (Dark Royal) */
+  --color-brand-3: #2563eb; /* Blue 600 (Primary Blue) */
+  --color-brand-4: #3b82f6; /* Blue 500 (Bright Accent) */
+  
+  --color-background: #ffffff; /* Crisp white background */
+  --color-foreground: #0f172a; /* Slate 900 text */
+  
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-outfit);
+  --font-mono: var(--font-inter);
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: var(--color-background);
+  --foreground: var(--color-foreground);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* 3D Utilities for Flashcards */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.35) 100%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(0, 0, 0, 0.08); /* Refined thin border */
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Glow Classes */
+.glow-card-brand-1 {
+  box-shadow: 0 15px 35px -12px rgba(15, 23, 42, 0.08);
+}
+.glow-card-brand-1:hover {
+  box-shadow: 0 20px 40px -8px rgba(15, 23, 42, 0.15);
+  border-color: rgba(15, 23, 42, 0.25);
+}
+
+.glow-card-brand-2 {
+  box-shadow: 0 15px 35px -12px rgba(30, 58, 186, 0.08);
+}
+.glow-card-brand-2:hover {
+  box-shadow: 0 20px 40px -8px rgba(30, 58, 186, 0.18);
+  border-color: rgba(30, 58, 186, 0.25);
+}
+
+.glow-card-brand-3 {
+  box-shadow: 0 15px 35px -12px rgba(37, 99, 235, 0.08);
+}
+.glow-card-brand-3:hover {
+  box-shadow: 0 20px 40px -8px rgba(37, 99, 235, 0.18);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.glow-card-brand-4 {
+  box-shadow: 0 15px 35px -12px rgba(59, 130, 246, 0.08);
+}
+.glow-card-brand-4:hover {
+  box-shadow: 0 20px 40px -8px rgba(59, 130, 246, 0.18);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Folder Glow styling */
+.folder-card-glow {
+  position: relative;
+}
+.folder-card-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.folder-card-glow:hover::after {
+  opacity: 1;
+}
+
+/* Global scroll boundary effect */
+body.is-scrolling .glass-panel {
+  border-color: rgba(37, 99, 235, 0.25); /* Glowing blue outline */
+  box-shadow: 0 12px 35px -10px rgba(37, 99, 235, 0.12);
+}
+
+/* Ensure navbar always has its specific border regardless of scrolling */
+body.is-scrolling nav.glass-panel,
+nav.glass-panel {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: none !important;
+}
+
+/* Animated Blobs */
+@keyframes blob-bounce {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob-bounce 12s infinite ease-in-out alternate;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Shimmer Highlight Sweep for Buttons */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-effect {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite linear;
+}
+
+/* Marching Ants / Glowing Pulsing Dotted Outline for Upload Drag & Drop */
+@keyframes dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+.animated-dash-border {
+  stroke-dasharray: 8;
+  animation: dash 2s infinite linear;
+}
+
+/* Global Noise Overlay - Much softer for light theme */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.02;
+  mix-blend-mode: multiply;
+}
+
+/* Text Gradients */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-brand-1) 0%, var(--color-brand-3) 50%, var(--color-brand-4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Print / PDF Export Styles */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: auto;
+  }
+  
+  body {
+    background-color: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  nav, footer, .noise-overlay, .animate-blob {
+    display: none !important;
+  }
+
+  /* Global Scale Down for Print to limit to 4-5 pages */
+  html {
+    font-size: 11.5px !important;
+  }
+  .prose {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Reduce excessive paddings and margins for print */
+  .p-6, .p-8, .md\:p-10 {
+    padding: 1.25rem !important;
+  }
+  .space-y-16 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.5rem !important;
+  }
+  .mb-6 {
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Prevent awkward page breaks in cards */
+  .glass-panel, .rounded-\[2rem\], .prose, motion\.div {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  /* Ensure borders are visible */
+  .border, .glass-panel {
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  /* Markdown & LaTeX specific print tweaks */
+  .prose {
+    max-width: 100% !important;
+  }
+}
+
+/* Accessibility: Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

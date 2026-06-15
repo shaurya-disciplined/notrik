@@ -1,0 +1,634 @@
+{
+  "notes": [
+    {
+      "id": "1781367759571",
+      "userId": "anonymous-session",
+      "title": "Binomial Theorem: Unlocking Expansions",
+      "content": {
+        "title": "Binomial Theorem: Unlocking Expansions",
+        "examRelevance": "The Binomial Theorem is a fundamental topic for competitive exams like JEE Main & Advanced, and various engineering entrance exams. Questions frequently appear on binomial coefficients, general terms, finding specific term coefficients, and properties of expansions, making it crucial for a strong foundational understanding.",
+        "summary": "The Binomial Theorem provides a systematic and powerful method to expand algebraic expressions of the form $(x+y)^n$ for any positive integer $n$. Instead of tedious sequential multiplication, this theorem offers a direct formula that uses binomial coefficients, derived from combinations. It not only simplifies complex algebraic expansions but also enables students to efficiently find any specific term, determine the total number of terms, and understand the inherent symmetric nature of the coefficients. Mastering this theorem is key to solving a variety of problems in algebra and combinatorics, streamlining calculations and enhancing problem-solving speed.",
+        "feynmanExplanation": "Imagine you have a simple expression like $(x+y)^2$. We all know this expands to $x^2 + 2xy + y^2$. \n\nIf we increase the power to $(x+y)^3$, it expands to $x^3 + 3x^2y + 3xy^2 + y^3$. \n\nAnd for $(x+y)^4$, it's $x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4$. \n\nNotice a few interesting patterns here:\n1.  The power of $x$ starts at $n$ (the exponent of the binomial) and decreases by 1 in each subsequent term, until it reaches $0$.\n2.  The power of $y$ starts at $0$ and increases by 1 in each subsequent term, until it reaches $n$.\n3.  If you add the powers of $x$ and $y$ in *any* single term, the sum is always equal to $n$. For example, in $4x^3y^1$, $3+1=4$.\n4.  There's a symmetrical pattern in the numbers (coefficients) in front of each term: $1, 2, 1$; then $1, 3, 3, 1$; then $1, 4, 6, 4, 1$. These special numbers are called 'Binomial Coefficients'.\n\nThe Binomial Theorem is simply a general formula that helps us find these coefficients and expand $(x+y)^n$ for *any* positive integer $n$ without having to do all the multiplications. It's like a universal shortcut for binomial expansions!",
+        "keyConcepts": [
+          {
+            "concept": "Binomial Expansion Formula",
+            "explanation": "For any positive integer $n$, the expansion of $(x+y)^n$ is given by the sum of terms where the powers of $x$ decrease from $n$ to $0$, and powers of $y$ increase from $0$ to $n$, each term being multiplied by a specific binomial coefficient ${}^nC_r$. The formula is $$(x+y)^n = \\sum_{r=0}^{n} {}^{n}C_r x^{n-r} y^r$$",
+            "importance": "High"
+          },
+          {
+            "concept": "Binomial Coefficient (${}^nC_r$)",
+            "explanation": "The term ${}^nC_r$ (read as 'n choose r' or 'nCr') represents the number of ways to choose $r$ items from a set of $n$ distinct items. It's calculated using factorials as $${}^{n}C_r = \\frac{n!}{r!(n-r)!}$$ These coefficients are fundamental to the expansion and form Pascal's Triangle.",
+            "importance": "High"
+          },
+          {
+            "concept": "Properties of Binomial Expansion",
+            "explanation": "1.  **Number of Terms**: In the expansion of $(x+y)^n$, there are $n+1$ terms.\n2.  **Sum of Powers**: The sum of the exponents of $x$ and $y$ in any single term of the expansion is always $n$.\n3.  **General Term**: The $(r+1)^{th}$ term, denoted as $T_{r+1}$, is a crucial formula given by $T_{r+1} = {}^{n}C_r x^{n-r} y^r$. This allows finding any specific term without writing the full expansion.\n4.  **Symmetry of Coefficients**: Binomial coefficients are symmetric, meaning ${}^nC_r = {}^nC_{n-r}$. For instance, ${}^nC_0 = {}^nC_n = 1$ and ${}^nC_1 = {}^nC_{n-1} = n$. This implies coefficients equidistant from the beginning and end of the expansion are equal.",
+            "importance": "High"
+          }
+        ],
+        "diagrams": [
+          {
+            "type": "mindmap",
+            "title": "Binomial Theorem Core Concepts",
+            "mermaidCode": "%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1e3a8a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#475569', 'secondaryColor': '#e0f2fe', 'tertiaryColor': '#bae6fd', 'fontFamily': 'Inter, system-ui, sans-serif', 'fontSize': '14px' }}}%%\nmindmap\n  root((Binomial Theorem))\n    Core_Concept[Expansion of (x+y)^n]\n      Formula[\"(x+y)^n = \\u2211_{r=0}^{n} (nCr * x^(n-r) * y^r)\"]\n      Purpose[\"Systematic algebraic expansion\"] \n    Binomial_Coefficients[Binomial Coefficients nCr]\n      Definition_nCr[\"Number of ways to choose r from n items\"]\n      Formula_nCr[\"nCr = n! / (r! * (n-r)!)\"]\n      Symmetry_nCr[\"Symmetry: nCr = nC(n-r)\"]\n      Pascal_Triangle[\"Forms Pascal's Triangle\"] \n    Key_Properties[Key Properties of Expansion]\n      Num_Terms[\"Number of Terms: n+1\"]\n      Power_Sum[\"Sum of Powers (x & y) in each term: n\"]\n      General_Term_Def[\"General Term (Tr+1) = nCr * x^(n-r) * y^r\"] \n    Important_Points[Important Considerations]\n      Middle_Term[\"Finding Middle Term(s)\"]\n      Term_Independent_of_X[\"Term Independent of X / Constant Term\"]\n      Greatest_Coefficient[\"Greatest Binomial Coefficient / Term\"]"
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Binomial Theorem for Positive Integer Exponent",
+            "formula": "$$(x+y)^n = \\sum_{r=0}^{n} {}^{n}C_r x^{n-r} y^r$$",
+            "whenToUse": "To expand any expression of the form $(x+y)^n$ where $n$ is a positive integer, or to analyze its terms and coefficients.",
+            "commonMistake": "Forgetting to sum across all possible values of $r$ from $0$ to $n$, or incorrectly applying the binomial coefficient."
+          },
+          {
+            "name": "Binomial Coefficient",
+            "formula": "$${}^{n}C_r = \\frac{n!}{r!(n-r)!}$$",
+            "whenToUse": "To calculate the numerical coefficient for a specific term in a binomial expansion or in combinatorics problems involving selections.",
+            "commonMistake": "Errors in factorial calculations ($0! = 1$) or misunderstanding that $r$ must be an integer from $0$ to $n$ inclusive."
+          },
+          {
+            "name": "General Term ($T_{r+1}$)",
+            "formula": "$$T_{r+1} = {}^{n}C_r x^{n-r} y^r$$",
+            "whenToUse": "To find any specific term (e.g., the $k^{th}$ term) or to determine the coefficient of a particular power of $x$ or $y$ in an expansion without fully expanding the series. Remember that for the $k^{th}$ term, $r = k-1$.",
+            "commonMistake": "Confusing $r$ with the term number. If asked for the $k^{th}$ term, students often use $r=k$ instead of $r=k-1$. Also, neglecting to include constants from $x$ or $y$ (e.g., in $(2x)^n$, $2^n$ is often missed)."
+          }
+        ],
+        "activeRecallQuestions": [
+          {
+            "question": "What is the total number of terms in the expansion of $(3a - 5b)^9$?",
+            "hint": "Relate the number of terms to the exponent $n$."
+          },
+          {
+            "question": "If you are asked to find the $6^{th}$ term in an expansion of $(P+Q)^n$, what value of $r$ would you use in the general term formula?",
+            "hint": "Recall the definition of $T_{r+1}$."
+          },
+          {
+            "question": "Explain the property of symmetry of binomial coefficients. Provide an example for ${}^{8}C_r$.",
+            "hint": "Think about pairs of coefficients that are equal."
+          },
+          {
+            "question": "In the expansion of $(x^2 + \\frac{1}{x})^7$, what is the sum of the powers of $x^2$ and $\\frac{1}{x}$ in any given term?",
+            "hint": "Consider the exponent of the entire binomial."
+          }
+        ],
+        "examples": [
+          {
+            "problem": "Find the $5^{th}$ term in the expansion of $(3x - 2y)^6$.",
+            "solution": "Here, the binomial is $(3x - 2y)^6$. So, $n=6$, $x_0 = 3x$, and $y_0 = -2y$. \nWe need the $5^{th}$ term, which means $T_{r+1} = T_5$. Therefore, $r+1=5 \\implies r=4$. \n\nUsing the general term formula $T_{r+1} = {}^{n}C_r x_0^{n-r} y_0^r$: \n$$T_5 = {}^{6}C_4 (3x)^{6-4} (-2y)^4$$\n$$T_5 = {}^{6}C_4 (3x)^2 (-2y)^4$$\nFirst, calculate ${}^{6}C_4$: \n$${}^{6}C_4 = \\frac{6!}{4!(6-4)!} = \\frac{6!}{4!2!} = \\frac{6 \\times 5}{2 \\times 1} = 15$$\nNow substitute this value back:\n$$T_5 = 15 (3^2 x^2) ((-2)^4 y^4)$$\n$$T_5 = 15 (9x^2) (16y^4)$$\n$$T_5 = 15 \\times 9 \\times 16 x^2 y^4$$\n$$T_5 = 2160 x^2 y^4$$\nThus, the $5^{th}$ term in the expansion is $2160 x^2 y^4$."
+          },
+          {
+            "problem": "Determine the coefficient of $x^4$ in the expansion of $(x+2)^7$.",
+            "solution": "The binomial is $(x+2)^7$. So, $n=7$, $x_0 = x$, and $y_0 = 2$. \nThe general term is $T_{r+1} = {}^{n}C_r x_0^{n-r} y_0^r$: \n$$T_{r+1} = {}^{7}C_r (x)^{7-r} (2)^r$$\nWe are looking for the term containing $x^4$. So, we set the exponent of $x$ equal to $4$: \n$7-r = 4 \\implies r = 3$. \n\nNow, substitute $r=3$ into the general term expression: \n$$T_{3+1} = T_4 = {}^{7}C_3 (x)^{7-3} (2)^3$$\n$$T_4 = {}^{7}C_3 x^4 (2)^3$$\nFirst, calculate ${}^{7}C_3$: \n$${}^{7}C_3 = \\frac{7!}{3!(7-3)!} = \\frac{7!}{3!4!} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$$\nSubstitute this value and calculate the term:\n$$T_4 = 35 x^4 (8)$$\n$$T_4 = 280 x^4$$\nThe coefficient of $x^4$ in the expansion is $280$."
+          }
+        ],
+        "commonMistakes": [
+          "**Term Number vs. 'r' Value**: Confusing the $(r+1)^{th}$ term with the $r^{th}$ term. If asked for the $k^{th}$ term, one must use $r=k-1$, not $r=k$.",
+          "**Calculation Errors in Factorials/nCr**: Making arithmetic mistakes while calculating factorials or the binomial coefficients ${}^nC_r$. Remember $0! = 1$.",
+          "**Sign Errors**: Incorrectly handling negative signs within the binomial, especially for terms like $(x-y)^n$ where $y_0$ should be considered as $-y$.",
+          "**Exponent Distribution**: Failing to distribute exponents correctly, e.g., treating $(2x)^n$ as $2x^n$ instead of $2^n x^n$.",
+          "**Missing Constants**: Overlooking constant factors from $x$ or $y$ terms when finding coefficients (e.g., in $(ax+b)^n$, the $a^k$ part is often forgotten).",
+          "**Incorrect Application of Properties**: Misapplying properties like symmetry or the formula for the number of terms."
+        ],
+        "quickRevision": "•   **Main Formula**: $(x+y)^n = \\sum_{r=0}^{n} {}^{n}C_r x^{n-r} y^r$.\n•   **Binomial Coefficient**: ${}^{n}C_r = \\frac{n!}{r!(n-r)!}$.\n•   **Total Terms**: $n+1$ terms in the expansion of $(x+y)^n$.\n•   **Sum of Powers**: The sum of the exponents of $x$ and $y$ in any term is always $n$.\n•   **General Term**: $T_{r+1} = {}^{n}C_r x^{n-r} y^r$. For $k^{th}$ term, use $r=k-1$.\n•   **Symmetry**: Binomial coefficients are symmetric; ${}^{n}C_r = {}^{n}C_{n-r}$.",
+        "tags": [
+          "Mathematics",
+          "Algebra",
+          "Binomial Theorem",
+          "JEE Main",
+          "JEE Advanced",
+          "Boards",
+          "Combinatorics",
+          "Permutations and Combinations"
+        ]
+      },
+      "sourceType": "image",
+      "formatRequested": "Markdown Notes",
+      "tokensUsed": {
+        "prompt": 1405,
+        "candidates": 3617,
+        "total": 9705
+      },
+      "estimatedCostINR": 0.80444,
+      "createdAt": "2026-06-13T16:22:39.571Z"
+    },
+    {
+      "id": "72c7dbac-909d-4035-89bf-95917f2bde97",
+      "userId": "user_1",
+      "title": "hikjk",
+      "content": {
+        "flashcards": [],
+        "examRelevance": "Custom Manual Deck"
+      },
+      "sourceType": "Manual",
+      "formatRequested": "Smart Flashcards",
+      "tokensUsed": {
+        "prompt": 0,
+        "candidates": 0,
+        "total": 0
+      },
+      "estimatedCostINR": 0,
+      "createdAt": "2026-06-13T15:18:38.697Z"
+    },
+    {
+      "id": "unorganized-flashcards",
+      "userId": "user_1",
+      "title": "Unorganized Flashcards",
+      "content": {
+        "flashcards": [],
+        "examRelevance": "Global holding area for flashcards not in a specific deck."
+      },
+      "sourceType": "System",
+      "formatRequested": "Smart Flashcards",
+      "tokensUsed": {
+        "prompt": 0,
+        "candidates": 0,
+        "total": 0
+      },
+      "estimatedCostINR": 0,
+      "createdAt": "2026-06-13T15:18:05.920Z"
+    },
+    {
+      "id": "1781358848206",
+      "userId": "anonymous-session",
+      "title": "Biology - Mitochondria (Structure & Functions) for NEET",
+      "content": {
+        "title": "Biology - Mitochondria (Structure & Functions) for NEET",
+        "examRelevance": "Mitochondria is a high-yield topic under Cell Biology in NEET and board exams. This deck covers high-yield concepts like structural compartmentalization, semi-autonomous nature, enzyme locations, and energy transduction.",
+        "flashcards": [
+          {
+            "id": "mitochondria-001",
+            "front": "Who first discovered mitochondria, and who coined the term 'Mitochondria'?",
+            "back": "1. **Discovered by**: Albert von Kölliker (1880) in the striated muscles of insects (originally called them 'sarcosomes'). Richard Altmann later called them 'Bioblasts' (1890).\n\n2. **Term Coined by**: Carl Benda (1898).",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "mitochondria-002",
+            "front": "Why is the mitochondrion considered a 'semi-autonomous organelle'?",
+            "back": "It possesses its own genetic and protein-synthesizing machinery:\n1. **DNA**: Single, circular, double-stranded, $G\\text{-}C$ rich DNA.\n2. **Ribosomes**: $70\\text{S}$ ribosomes (similar to prokaryotic ribosomes).\n3. **RNA**: mRNA, tRNA, and rRNA.\n\n*Note*: It is only **semi**-autonomous because it still depends on nuclear DNA and cytoplasmic machinery for most of its proteins.",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "mitochondria-003",
+            "front": "Differentiate between the outer and inner mitochondrial membranes in terms of protein-lipid ratio and permeability.",
+            "back": "1. **Outer Membrane**:\n- **Ratio**: Higher lipid-to-protein ratio.\n- **Permeability**: Highly permeable due to large channel-forming proteins called **porins**.\n\n2. **Inner Membrane**:\n- **Ratio**: Higher protein-to-lipid ratio (rich in enzymes and electron carriers).\n- **Permeability**: Selectively impermeable; contains a unique phospholipid called **cardiolipin** which prevents ion leakage.",
+            "difficulty": "Hard"
+          },
+          {
+            "id": "mitochondria-004",
+            "front": "What are cristae, and what is their primary functional significance?",
+            "back": "Cristae are finger-like or tubular infoldings of the **inner mitochondrial membrane** projecting into the matrix.\n\n**Significance**: They enormously increase the surface area of the inner membrane, accommodating a higher density of Electron Transport Chain (ETC) complexes and ATP synthase ($F_0\\text{-}F_1$ particles) to boost ATP production capacity.",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "mitochondria-005",
+            "front": "Where exactly do the TCA (Krebs) cycle and the Electron Transport Chain (ETC) occur within the mitochondrion?",
+            "back": "1. **TCA (Krebs) Cycle**: Occurs in the **Mitochondrial Matrix** (fluid-filled inner compartment containing soluble enzymes).\n\n2. **Electron Transport Chain (ETC)**: Occurs in the **Inner Mitochondrial Membrane (IMM)**.",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "mitochondria-006",
+            "front": "Which TCA cycle enzyme is an EXCEPTION to the rule of being located in the mitochondrial matrix, and where is it located?",
+            "back": "**Succinate Dehydrogenase (SDH)**.\n\nInstead of being soluble in the matrix, it is tightly bound to the **inner mitochondrial membrane** (integrated as **Complex II** of the Electron Transport Chain). This is a classic NEET question.",
+            "difficulty": "Hard"
+          },
+          {
+            "id": "mitochondria-007",
+            "front": "Describe the structure and dual-subunit roles of the $F_0\\text{-}F_1$ particles (Oxysomes/ATP Synthase Complex V).",
+            "back": "$F_0\\text{-}F_1$ particles are embedded in the inner mitochondrial membrane:\n\n1. **$F_0$ Subunit**: An integral membrane channel through which protons ($H^+$) diffuse down their electrochemical gradient from the intermembrane space to the matrix.\n\n2. **$F_1$ Subunit**: A peripheral headpiece projecting into the matrix. It acts as an active catalytic site that undergoes conformational changes to synthesize ATP:\n$$\\text{ADP} + \\text{P}_i \\xrightarrow{\\text{ATP Synthase}} \\text{ATP}$$",
+            "difficulty": "Hard"
+          },
+          {
+            "id": "mitochondria-008",
+            "front": "During active cellular respiration, how does the pH of the intermembrane space compare to the matrix?",
+            "back": "The **intermembrane space has a lower pH (more acidic)** compared to the matrix.\n\n**Reason**: The Electron Transport Chain (ETC) complexes (I, III, and IV) actively pump protons ($H^+$) from the matrix into the intermembrane space, creating a high concentration of $H^+$ (acidic environment) which drives the proton motive force.",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "mitochondria-009",
+            "front": "What pattern of inheritance is exhibited by mitochondrial DNA in humans, and why?",
+            "back": "**Maternal (or Cytoplasmic/Extranuclear) Inheritance**.\n\n**Reason**: During fertilization, only the sperm's nucleus enters the egg, whereas the zygote's cytoplasm is entirely contributed by the ovum (egg cell). Therefore, all offspring inherit their mitochondrial DNA exclusively from their mother.",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "mitochondria-010",
+            "front": "By what process do mitochondria divide/multiply inside a cell?",
+            "back": "Mitochondria divide by **fission** (similar to binary fission in bacteria).\n\nThis prokaryotic-like replication mechanism is strong evidence supporting the **Endosymbiotic Theory**, which states that mitochondria evolved from free-living aerobic alpha-proteobacteria.",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "mitochondria-011",
+            "front": "Identify the standard 'marker enzymes' used to identify the outer membrane, inner membrane, and matrix of mitochondria.",
+            "back": "- **Outer Membrane**: Monoamine Oxidase (MAO) / Rotenone-insensitive NADH-cytochrome c reductase\n- **Inner Membrane**: Succinate Dehydrogenase / Cytochrome Oxidase\n- **Matrix**: Malate Dehydrogenase / Citrate Synthase",
+            "difficulty": "Hard"
+          }
+        ],
+        "tags": [
+          "Biology",
+          "Cell Biology",
+          "Cell: Structure and Functions",
+          "Mitochondria",
+          "NEET",
+          "Class 11"
+        ]
+      },
+      "sourceType": "text",
+      "formatRequested": "Smart Flashcards",
+      "tokensUsed": {
+        "prompt": 554,
+        "candidates": 1621,
+        "total": 4310
+      },
+      "estimatedCostINR": 0.0439598,
+      "createdAt": "2026-06-13T13:54:08.206Z"
+    },
+    {
+      "id": "1781357925087",
+      "userId": "anonymous-session",
+      "title": "Essential Cellular Foundations: Mitochondria, DNA, and Water",
+      "content": {
+        "title": "Essential Cellular Foundations: Mitochondria, DNA, and Water",
+        "examRelevance": "Extremely high-yield for NEET (Biology & Biomolecules) and Class 11/12 Board Exams. Concepts frequently appear in questions regarding oxidative phosphorylation, Chargaff's rules, and biological physical chemistry.",
+        "summary": "This study set covers the structural and functional pillars of cellular life: Mitochondria, DNA, and Water. Mitochondria serve as the metabolic 'powerhouses' generating ATP via oxidative phosphorylation. Deoxyribonucleic Acid (DNA) acts as the double-helical genetic blueprint storing developmental and operational instructions. Water ($H_2O$), the universal solvent, provides the vital aqueous medium for biochemical reactions, maintaining thermal stability due to its high specific heat capacity. Together, they illustrate how chemical structures dictate biological function at a cellular level.",
+        "feynmanExplanation": "Think of a living cell as a highly automated, busy factory.\n\n1. The Mitochondria are the factory's power generators. They take raw fuel (food molecules) and convert it into standard, ready-to-use biological batteries called ATP.\n\n2. DNA is the master instruction manual stored in the high-security main office (the nucleus). It is written in a simple four-letter alphabet (A, T, G, C) that tells the cellular machinery exactly how to build everything the factory needs.\n\n3. Water is the fluid that fills the entire factory floor. Because it is highly polar, it acts like a universal medium, letting different machine components dissolve, float, meet, and interact smoothly without overheating, thanks to its ability to absorb a lot of heat without a rapid change in temperature.",
+        "keyConcepts": [
+          {
+            "concept": "Mitochondria: The Powerhouse of the Cell",
+            "explanation": "Mitochondria are double-membrane-bound organelles responsible for generating Adenosine Triphosphate (ATP) through aerobic respiration. The inner membrane is folded into cristae to increase surface area and contains the Electron Transport Chain (ETC) and $F_0-F_1$ ATP synthase complexes. Protons ($H^+$) are pumped into the intermembrane space, creating an electrochemical gradient ($$\\Delta p$$) that drives ATP synthesis as protons flow back into the matrix.",
+            "importance": "High"
+          },
+          {
+            "concept": "DNA (Deoxyribonucleic Acid): The Genetic Blueprint",
+            "explanation": "DNA is a polymer of nucleotides consisting of a deoxyribose sugar, a phosphate group, and a nitrogenous base (Adenine, Thymine, Cytosine, or Guanine). It exists as a double-stranded antiparallel helix. The strands run in opposite directions ($5' \\rightarrow 3'$ and $3' \\rightarrow 5'$) and are held together by hydrogen bonds between complementary bases: Adenine pairs with Thymine (2 H-bonds: $A = T$) and Guanine pairs with Cytosine (3 H-bonds: $G \\equiv C$).",
+            "importance": "High"
+          },
+          {
+            "concept": "Water ($H_2O$): The Medium of Life",
+            "explanation": "Water is a polar molecule due to the electronegativity difference between Oxygen and Hydrogen, creating a bent molecular geometry ($104.5^\\circ$). This polarity allows extensive hydrogen bonding, giving water high cohesive strength, surface tension, and a high specific heat capacity ($4.184\\text{ J/g}^\\circ\\text{C}$). It acts as a universal solvent for polar and ionic cellular constituents, driving hydrophobic interactions that shape proteins and lipid bilayers.",
+            "importance": "Medium"
+          }
+        ],
+        "diagrams": [
+          {
+            "type": "mindmap",
+            "title": "Cellular Essentials Concept Map",
+            "mermaidCode": "%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1e3a8a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#475569', 'secondaryColor': '#e0f2fe', 'tertiaryColor': '#bae6fd', 'fontFamily': 'Inter, system-ui, sans-serif', 'fontSize': '14px' }}}%%\ngraph TD\n    Root[\"Cellular Essentials\"]\n    Root --> Mito[\"Mitochondria (Powerhouse)\"]\n    Root --> DNA[\"DNA (Genetic Blueprint)\"]\n    Root --> Water[\"Water (H2O Solvent)\"]\n    Mito --> M1[\"Double Membrane & Cristae\"]\n    Mito --> M2[\"ATP Synthesis via Proton Gradient\"]\n    DNA --> D1[\"Double Helix Structure\"]\n    DNA --> D2[\"Chargaff's Rule: A+G = T+C\"]\n    Water --> W1[\"Hydrogen Bonding & Polarity\"]\n    Water --> W2[\"High Specific Heat Capacity\"]"
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Chargaff's Rule of Base Pairing",
+            "formula": "$$\\frac{A + G}{T + C} = 1$$",
+            "whenToUse": "Used to determine the percentage of specific nitrogenous bases in a double-stranded DNA sample when the composition of at least one base is known.",
+            "commonMistake": "Applying this rule to single-stranded RNA or single-stranded DNA genomes (e.g., bacteriophages), where $A \\neq T$ and $G \\neq C$ can occur."
+          },
+          {
+            "name": "Proton Motive Force (PMF)",
+            "formula": "$$\\Delta p = \\Delta \\psi - \\frac{2.303 RT}{F} \\Delta \\text{pH}$$",
+            "whenToUse": "To calculate the electrochemical gradient across the inner mitochondrial membrane, where $\\Delta \\psi$ is membrane potential and $\\Delta \\text{pH}$ is the pH gradient.",
+            "commonMistake": "Forgetting that a lower pH in the intermembrane space compared to the matrix is what drives the positive direction of the proton flow."
+          }
+        ],
+        "activeRecallQuestions": [
+          {
+            "question": "Q1: Explain why mitochondria are called 'semi-autonomous' organelles, and connect this to their evolutionary origin.",
+            "hint": "Think about their genetic material and the Endosymbiotic Theory."
+          },
+          {
+            "question": "Q2: If a double-stranded DNA molecule contains 20% Adenine, what are the percentages of Guanine, Cytosine, and Thymine?",
+            "hint": "Use Chargaff's rule: A pairs with T, and the total must sum to 100%."
+          },
+          {
+            "question": "Q3: How does the polar nature of water molecules prevent rapid temperature fluctuations in cells?",
+            "hint": "Recall the intermolecular forces that must be broken to raise water's temperature."
+          }
+        ],
+        "examples": [
+          {
+            "problem": "A sample of double-stranded DNA from a human cell is analyzed and found to contain 30% Adenine. Calculate the percentage of Cytosine present in this DNA sample.",
+            "solution": "1. According to Chargaff's Rule for double-stranded DNA, the amount of Adenine ($A$) equals Thymine ($T$):\n$$A = T = 30\\%$$\n\n2. Sum of Adenine and Thymine bases:\n$$A + T = 30\\% + 30\\% = 60\\%$$\n\n3. The remaining percentage belongs to Guanine ($G$) and Cytosine ($C$):\n$$G + C = 100\\% - 60\\% = 40\\%$$\n\n4. Since Guanine pairs equally with Cytosine ($G = C$):\n$$C = \\frac{40\\%}{2} = 20\\%$$\n\nTherefore, the percentage of Cytosine in the DNA sample is $20\\%$."
+          }
+        ],
+        "commonMistakes": [
+          "Stating that ATP is *created* by mitochondria. Mitochondria do not create energy; they convert biochemical energy from food into the chemical bonds of ATP (following the First Law of Thermodynamics).",
+          "Writing DNA strands as parallel. They are always antiparallel ($5' \\rightarrow 3'$ matched to $3' \\rightarrow 5'$).",
+          "Confusing the bonds: Hydrogen bonds hold the complementary bases of the two strands together (non-covalent), while Phosphodiester bonds link individual nucleotides along a single strand's backbone (covalent)."
+        ],
+        "quickRevision": "- **Mitochondria**: Double-membrane structure. Inner membrane forms cristae to host the ETC. Often called the 'powerhouse' because it generates ATP via oxidative phosphorylation using a proton gradient.\n- **DNA**: Stands for Deoxyribonucleic acid. Composed of two antiparallel polynucleotide chains wound into a double helix. Uses base pairing: $A = T$ (2 hydrogen bonds) and $G \\equiv C$ (3 hydrogen bonds).\n- **Water ($H_2O$)**: Universal biological solvent due to its polar nature and bent geometry. High specific heat capacity buffers cells against temperature shocks.\n- **Key Rules**: Chargaff's Rule states $A+G = T+C$ (Purines = Pyrimidines) in double-stranded DNA.",
+        "tags": [
+          "Biology",
+          "Biomolecules",
+          "Cell Biology",
+          "NEET",
+          "Class 11 Biology",
+          "Class 12 Boards"
+        ]
+      },
+      "sourceType": "text",
+      "formatRequested": "Flashcards (Q&A)",
+      "tokensUsed": {
+        "prompt": 1172,
+        "candidates": 2170,
+        "total": 5018
+      },
+      "estimatedCostINR": 0.0615164,
+      "createdAt": "2026-06-13T13:38:45.087Z"
+    },
+    {
+      "id": "1781357725936",
+      "userId": "anonymous-session",
+      "title": "Cellular Foundations: Mitochondria, DNA, and Water",
+      "content": {
+        "title": "Cellular Foundations: Mitochondria, DNA, and Water",
+        "examRelevance": "Highly crucial for NEET (Biology and Chemistry), JEE (Organic & Physical Chemistry), and Board Exams. Frequently tested under Cell Biology, Biomolecules, and Chemical Bonding.",
+        "summary": "This study module covers the three fundamental pillars of cellular life: Mitochondria, DNA, and Water. Mitochondria act as the cellular powerhouse, generating ATP through oxidative phosphorylation. DNA (Deoxyribonucleic acid) serves as the double-helical genetic blueprint storing and transmitting hereditary information. Water ($H_2O$) provides the highly polar, hydrogen-bonded aqueous matrix that acts as the universal solvent for all biochemistry. Understanding these three components is key to mastering bio-energetics, genetics, and molecular interactions.",
+        "feynmanExplanation": "Imagine a highly efficient modern city. \n\n1. **The Mitochondria** is the city's high-tech thermal power plant. It takes in raw fuel (glucose/food breakdown products) and converts it into standard electric batteries (ATP molecules) that the rest of the city can plug in and use instantly. \n\n2. **DNA** is the central archives library. Inside, it holds giant master-blueprints (written in a 4-letter chemical alphabet: A, T, G, C) containing the exact instructions on how to build every single machine and building in the city. \n\n3. **Water** is the network of canals, rivers, and fluid highways flowing through every street. Because of its unique sticky nature (hydrogen bonding), it dissolves materials easily, regulates the city's temperature, and provides the medium for all transport and construction work.",
+        "keyConcepts": [
+          {
+            "concept": "Q: Why is Mitochondria called the 'Powerhouse of the Cell'?",
+            "explanation": "Mitochondria synthesize Adenosine Triphosphate (ATP) via the Electron Transport Chain (ETC) and oxidative phosphorylation. Protons ($H^+$) are pumped across the inner mitochondrial membrane into the intermembrane space, creating an electrochemical gradient (Proton Motive Force). As protons flow back into the matrix through the $F_0-F_1$ ATPase complex, the mechanical rotation of the enzyme drives the phosphorylation of ADP: $$ADP + P_i \\xrightarrow{\\text{ATP Synthase}} ATP$$",
+            "importance": "High"
+          },
+          {
+            "concept": "Q: What is the structural stoichiometry and composition of DNA?",
+            "explanation": "DNA stands for Deoxyribonucleic acid. It is a polymer of deoxyribonucleotides. Each nucleotide consists of a deoxyribose sugar, a nitrogenous base (Adenine, Thymine, Guanine, Cytosine), and a phosphate group. The two strands run antiparallel ($5' \\rightarrow 3'$ and $3' \\rightarrow 5'$) and are held together by complementary hydrogen bonds: $$A \\text{ (Purine)} \\rightleftharpoons T \\text{ (Pyrimidine)} \\quad [2 \\text{ H-bonds}]$$ $$G \\text{ (Purine)} \\equiv C \\text{ (Pyrimidine)} \\quad [3 \\text{ H-bonds}]$$",
+            "importance": "High"
+          },
+          {
+            "concept": "Q: How does the molecular structure of Water ($H_2O$) enable biological life?",
+            "explanation": "Water is a bent molecule (bond angle $\\approx 104.5^\\circ$) with $sp^3$ hybridization. Due to the high electronegativity difference between Oxygen and Hydrogen, it has a strong net dipole moment. This makes it a highly polar solvent capable of forming extensive intermolecular hydrogen bonding networks, leading to a high specific heat capacity, high surface tension, and a high dielectric constant ($80$ at $25^\\circ\\text{C}$) that weakens ionic attractions in salts: $$F = \\frac{1}{4\\pi\\varepsilon_0 \\varepsilon_r} \\frac{q_1 q_2}{r^2}$$",
+            "importance": "Medium"
+          }
+        ],
+        "diagrams": [
+          {
+            "type": "mindmap",
+            "title": "Structural and Functional Relationships",
+            "mermaidCode": "%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1e3a8a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#475569', 'secondaryColor': '#e0f2fe', 'tertiaryColor': '#bae6fd', 'fontFamily': 'Inter, system-ui, sans-serif', 'fontSize': '14px' }}}%%\ngraph TD\n    Root[\"Cellular Pillars\"]\n    Root --> Mito[\"Mitochondria\"]\n    Root --> Gen[\"DNA\"]\n    Root --> Sol[\"Water\"]\n    \n    Mito --> M1[\"Inner Membrane Folding: Cristae\"]\n    Mito --> M2[\"ATP Generation: Powerhouse\"]\n    Mito --> M3[\"Semiautonomous: Has Own DNA\"]\n    \n    Gen --> G1[\"Double Helix Structure\"]\n    Gen --> G2[\"Deoxyribonucleic Acid\"]\n    Gen --> G3[\"Genetic Blueprint storage\"]\n    \n    Sol --> S1[\"Polar Covalent H2O\"]\n    Sol --> S2[\"Universal Polar Solvent\"]\n    Sol --> S3[\"Hydrogen Bonding Network\"]"
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Chargaff's Rule of DNA Base Pairing",
+            "formula": "$$A + G = T + C \\quad \\text{or} \\quad \\frac{A+G}{T+C} = 1$$",
+            "whenToUse": "Used to find the percentages of specific nitrogenous bases in a double-stranded DNA sample.",
+            "commonMistake": "Applying this rule to single-stranded RNA or single-stranded DNA where base-pairing is not complementary."
+          },
+          {
+            "name": "Ionic Product of Water ($K_w$)",
+            "formula": "$$K_w = [H^+][OH^-] = 1.0 \\times 10^{-14} \\text{ at } 298\\text{ K}$$",
+            "whenToUse": "Used in aqueous equilibrium calculations to determine $pH$ or $pOH$ of solutions.",
+            "commonMistake": "Assuming $K_w$ remains constant at all temperatures; it is highly temperature-dependent."
+          }
+        ],
+        "activeRecallQuestions": [
+          {
+            "question": "Flashcard: Why does DNA contain thymine instead of uracil, and how does this affect structural stability?",
+            "hint": "Think about spontaneous deamination reactions."
+          },
+          {
+            "question": "Flashcard: What is the thermodynamic driving force behind water's hydrophobic effect on biomolecules?",
+            "hint": "Consider the entropy of surrounding water molecules."
+          },
+          {
+            "question": "Flashcard: Why is the inner mitochondrial membrane highly folded into cristae?",
+            "hint": "Surface area enhancement for enzymes."
+          }
+        ],
+        "examples": [
+          {
+            "problem": "A double-stranded DNA sample has 20% Adenine bases. Calculate the percentage of Cytosine bases in this sample.",
+            "solution": "Step 1: According to Chargaff's Rule, the amount of Adenine ($A$) equals Thymine ($T$). \n$$A = T = 20\\%$$\n\nStep 2: Calculate the combined percentage of $A$ and $T$.\n$$A + T = 20\\% + 20\\% = 40\\%$$\n\nStep 3: Find the remaining percentage allocated to Guanine ($G$) and Cytosine ($C$).\n$$G + C = 100\\% - 40\\% = 60\\%$$\n\nStep 4: Since $G = C$, divide the remaining portion equally.\n$$C = \\frac{60\\%}{2} = 30\\%$$\n\nTherefore, the percentage of Cytosine bases is $30\\%$."
+          }
+        ],
+        "commonMistakes": [
+          "Thinking mitochondria make energy from nothing: They only *transduce* chemical energy from bond storage to ATP; they do not create energy.",
+          "Forgetting DNA polarity: Writing replication sequences without labeling the $5'$ and $3'$ ends, causing reverse-complementation errors.",
+          "Misinterpreting water as a pure ionic compound: $H_2O$ is covalent but polar; it does not fully dissociate into ions under normal biological conditions."
+        ],
+        "quickRevision": "• **Mitochondria**: Double-membrane bound organelle; inner membrane contains Oxysomes ($F_0-F_1$ particles) for ATP synthesis.\n• **DNA**: Double-stranded, antiparallel helical polymer. Strands bound by hydrogen bonds ($A=T$ and $G\\equiv C$). Purine to pyrimidine ratio is $1:1$ (Chargaff's Rule).\n• **Water ($H_2O$)**: Highly polar, tetrahedral coordination via H-bonding, dynamic solvent cage behavior, and neutral $pH=7$ at room temperature.",
+        "tags": [
+          "Biology",
+          "Chemistry",
+          "Cell Biology",
+          "Biomolecules",
+          "NEET",
+          "JEE",
+          "Class 11",
+          "Class 12"
+        ]
+      },
+      "sourceType": "text",
+      "formatRequested": "Flashcards (Q&A)",
+      "tokensUsed": {
+        "prompt": 1172,
+        "candidates": 2151,
+        "total": 5050
+      },
+      "estimatedCostINR": 0.0610414,
+      "createdAt": "2026-06-13T13:35:25.936Z"
+    },
+    {
+      "id": "1781354526479",
+      "userId": "anonymous-session",
+      "title": "Mastering the Binomial Theorem & Expansions",
+      "content": {
+        "title": "Mastering the Binomial Theorem & Expansions",
+        "examRelevance": "The Binomial Theorem is a high-scoring, high-yield topic for JEE Main, Advanced, and CBSE Boards, with 1 to 2 direct questions consistently asked. It also forms the algebraic foundation for complex topics like Probability, Calculus, and Infinite Series.",
+        "summary": "The Binomial Theorem provides an algebraic framework to expand expressions raised to any positive integer power, such as $(x+y)^n$. Instead of executing repetitive algebraic multiplication, the theorem reveals a predictable pattern governed by combinatorics. In any expansion, the total number of terms is always $n+1$, and the sum of the exponents of both variables in every term remains constant at $n$. The coefficients of these terms, called binomial coefficients, are symmetric from both ends of the expansion and are calculated using combinations. This structured symmetry is visually mapped by Pascal's Triangle.",
+        "feynmanExplanation": "Imagine you have $n$ identical boxes, and each box contains a red ball ($x$) and a blue ball ($y$). To form a term in your final algebraic expansion, you must reach into each of the $n$ boxes and pick exactly one ball. If you choose to pick the blue ball ($y$) from exactly $r$ boxes, you must pick the red ball ($x$) from the remaining $(n-r)$ boxes. This specific choice results in the term $x^{n-r}y^r$. The number of different ways you can choose which $r$ boxes out of $n$ will give you the blue ball is given by the combinations formula ${}^nC_r$ (read as 'n choose r'). Summing up all the possible combinations from choosing zero blue balls all the way to $n$ blue balls gives you the complete, beautifully ordered expansion of $(x+y)^n$.",
+        "keyConcepts": [
+          {
+            "concept": "The General Binomial Theorem",
+            "explanation": "Any binomial expression $(x+y)^n$ where $n \\in \\mathbb{N}$ can be expanded as: $$(x+y)^n = {}^nC_0 x^n y^0 + {}^nC_1 x^{n-1} y^1 + {}^nC_2 x^{n-2} y^2 + \\dots + {}^nC_n x^0 y^n$$ In compact sigma notation, this is expressed as: $$(x+y)^n = \\sum_{r=0}^{n} {}^nC_r x^{n-r} y^r$$",
+            "importance": "High"
+          },
+          {
+            "concept": "Binomial Coefficients",
+            "explanation": "The coefficients of the terms in the expansion are combinations, denoted by ${}^nC_r$ or $\\binom{n}{r}$. It represents the number of ways to choose $r$ objects from a set of $n$ distinct objects, calculated as: $${}^nC_r = \\frac{n!}{(n-r)! r!}$$ where $n!$ (n factorial) $= n \\times (n-1) \\times \\dots \\times 1$, and $0! = 1$.",
+            "importance": "High"
+          },
+          {
+            "concept": "Fundamental Properties of the Expansion",
+            "explanation": "1. **Number of Terms**: The expansion of $(x+y)^n$ contains exactly $n+1$ terms.\n\n2. **Sum of Powers**: In every single term, the sum of the exponents of $x$ and $y$ is always constant and equal to the power $n$ (i.e., $(n-r) + r = n$).\n\n3. **Symmetry of Coefficients**: Coefficients from the beginning and end of the expansion are equal due to the identity: $${}^nC_r = {}^nC_{n-r}$$ This means ${}^nC_0 = {}^nC_n$, ${}^nC_1 = {}^nC_{n-1}$, etc.",
+            "importance": "High"
+          }
+        ],
+        "diagrams": [
+          {
+            "type": "mindmap",
+            "title": "Binomial Theorem Architecture Map",
+            "mermaidCode": "%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1e3a8a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#475569', 'secondaryColor': '#e0f2fe', 'tertiaryColor': '#bae6fd', 'fontFamily': 'Inter, system-ui, sans-serif', 'fontSize': '14px' }}}%%\ngraph TD\n    Root[\"Binomial Theorem\"] --> GenForm[\"General Formula\"]\n    Root --> Props[\"Essential Properties\"]\n    Root --> Coeffs[\"Binomial Coefficients\"]\n\n    GenForm --> Sigma[\"Sigma Notation: Sum of nCr * x^(n-r) * y^r\"]\n    GenForm --> GenTerm[\"General Term: T(r+1) = nCr * x^(n-r) * y^r\"]\n\n    Props --> NumTerms[\"Total Terms = n + 1\"]\n    Props --> PowerSum[\"Sum of exponents of x and y in each term = n\"]\n\n    Coeffs --> Formula[\"nCr = n! / ( r! * (n-r)! )\"]\n    Coeffs --> Symmetry[\"Symmetry: nCr = nC(n-r)\"]"
+          }
+        ],
+        "formulas": [
+          {
+            "name": "General Term of Binomial Expansion",
+            "formula": "T_{r+1} = {}^nC_r x^{n-r} y^r",
+            "whenToUse": "Use this formula to determine any specific term (e.g., 5th term, middle term) or when finding the coefficient of a specific power of $x$ without expanding the entire expression.",
+            "commonMistake": "To find the $k^{\\text{th}}$ term, students often substitute $r = k$ instead of $r = k-1$. Always remember that the subscript in $T_{r+1}$ requires $r$ to be one less than the desired term index."
+          },
+          {
+            "name": "Symmetric Combinations Formula",
+            "formula": "{}^nC_r = {}^nC_{n-r}",
+            "whenToUse": "Use this to simplify manual computations of large binomial coefficients. For example, calculating ${}^{10}C_8$ is equivalent to calculating the simpler ${}^{10}C_2$.",
+            "commonMistake": "Failing to apply this identity leads to wasting precious time solving massive factorials during exams."
+          }
+        ],
+        "activeRecallQuestions": [
+          {
+            "question": "Flashcard 1: How many terms are there in the expansion of $(3x - 2y)^{11}$?",
+            "hint": "The number of terms in $(a+b)^n$ is $n+1$."
+          },
+          {
+            "question": "Flashcard 2: Write down the expression for the $5^{\\text{th}}$ term ($T_5$) of the expansion of $(x+y)^{9}$. What is the value of $r$?",
+            "hint": "Use $T_{r+1} = {}^nC_r x^{n-r} y^r$. Since we want $T_5$, set $r+1 = 5 \\implies r = 4$."
+          },
+          {
+            "question": "Flashcard 3: What is the sum of the indices (powers) of the variables in any term of the expansion $(5a + 7b)^{23}$?",
+            "hint": "Recall the fundamental property relating to the sum of powers in any term."
+          },
+          {
+            "question": "Flashcard 4: Explain why ${}^{100}C_{97}$ is identical to ${}^{100}C_{3}$.",
+            "hint": "Apply the symmetry property ${}^nC_r = {}^nC_{n-r}$."
+          }
+        ],
+        "examples": [
+          {
+            "problem": "Expand $(2x + 3y)^4$ completely using the Binomial Theorem.",
+            "solution": "We use the expansion formula for $n=4$, where our first term is $A = (2x)$ and our second term is $B = (3y)$:\n\n$$(2x+3y)^4 = {}^4C_0 (2x)^4(3y)^0 + {}^4C_1 (2x)^3(3y)^1 + {}^4C_2 (2x)^2(3y)^2 + {}^4C_3 (2x)^1(3y)^3 + {}^4C_4 (2x)^0(3y)^4$$\n\nStep 1: Compute the binomial coefficients using ${}^nC_r$:\n- ${}^4C_0 = 1$\n- ${}^4C_1 = 4$\n- ${}^4C_2 = \\frac{4 \\times 3}{2 \\times 1} = 6$\n- ${}^4C_3 = {}^4C_1 = 4$\n- ${}^4C_4 = {}^4C_0 = 1$\n\nStep 2: Substitute values and calculate each term:\n- Term 1: $1 \\cdot (16x^4) \\cdot 1 = 16x^4$\n- Term 2: $4 \\cdot (8x^3) \\cdot (3y) = 96x^3y$\n- Term 3: $6 \\cdot (4x^2) \\cdot (9y^2) = 216x^2y^2$\n- Term 4: $4 \\cdot (2x) \\cdot (27y^3) = 216xy^3$\n- Term 5: $1 \\cdot 1 \\cdot (81y^4) = 81y^4$\n\nStep 3: Combine all terms for the final answer:\n$$(2x+3y)^4 = 16x^4 + 96x^3y + 216x^2y^2 + 216xy^3 + 81y^4$$"
+          }
+        ],
+        "commonMistakes": [
+          "Using $r = k$ when asked for the $k^{\\text{th}}$ term. Remember, the $k^{\\text{th}}$ term is written as $T_{r+1}$, meaning $r = k - 1$.",
+          "Forgetting to apply powers to numerical coefficients. In $(2x)^3$, students often write $2x^3$ instead of the correct $8x^3$.",
+          "Ignoring negative signs of terms. When expanding $(x-y)^n$, treat the second term as $(-y)$ so that signs alternate: positive for even powers of $r$, negative for odd powers of $r$."
+        ],
+        "quickRevision": "• **General Formula**: $(x+y)^n = \\sum_{r=0}^{n} {}^nC_r x^{n-r} y^r$\n• **Number of Terms**: Always $n+1$ terms.\n• **General Term**: $T_{r+1} = {}^nC_r x^{n-r} y^r$\n• **Sum of Powers**: The sum of powers of $x$ and $y$ in any term always equals $n$.\n• **Symmetric Coefficients**: ${}^nC_r = {}^nC_{n-r}$ (coefficients equidistant from the start and end are identical).\n• **Coefficient Formula**: ${}^nC_r = \\frac{n!}{(n-r)! r!}$ with $0! = 1$.",
+        "tags": [
+          "Mathematics",
+          "Algebra",
+          "Binomial Theorem",
+          "JEE Main",
+          "Class 11",
+          "Revision Notes"
+        ]
+      },
+      "sourceType": "image",
+      "formatRequested": "Flashcards (Q&A)",
+      "tokensUsed": {
+        "prompt": 2222,
+        "candidates": 2763,
+        "total": 7861
+      },
+      "estimatedCostINR": 0.08285139999999999,
+      "createdAt": "2026-06-13T12:42:06.479Z",
+      "folderId": "1781354446959",
+      "subfolderId": null
+    },
+    {
+      "id": "1781354216621",
+      "userId": "anonymous-session",
+      "title": "Binomial Theorem: Fundamentals and Expansions",
+      "content": {
+        "title": "Binomial Theorem: Fundamentals and Expansions",
+        "examRelevance": "An essential topic for JEE Main, Advanced, and Class 11/12 Board Exams. In JEE, at least 1-2 direct questions are asked, and it is frequently integrated with Probability and Calculus.",
+        "summary": "The Binomial Theorem provides a robust algebraic method to expand any positive integral power of a binomial expression $(x+y)^n$. Instead of manual polynomial multiplication, it uses combinatorics to determine the coefficient of each term using the combination formula ${}^nC_r$. An expansion of index $n$ always yields exactly $n+1$ terms, and the sum of exponents of $x$ and $y$ in each term remains constant at $n$. The coefficients exhibit complete symmetry from the start to the end of the expansion. This theorem serves as a foundation for sequences, series approximations, and combinatorial proofs.",
+        "feynmanExplanation": "Imagine you have $n$ identical boxes, and inside each box, there is a choice: you can grab an $x$ or a $y$. If you multiply all $n$ brackets of $(x+y)$ together, you are making this choice for every single box. To find out how many times you end up with $x^{n-r}y^r$ (which means you chose $y$ exactly $r$ times and $x$ the rest of the times), you simply count the number of ways to choose $r$ items out of $n$ available boxes. This counting is exactly what the combination formula ${}^nC_r$ does! Thus, $(x+y)^n$ is just the sum of all these choices, which makes expansion a structured counting game.",
+        "keyConcepts": [
+          {
+            "concept": "Binomial Expansion Formula",
+            "explanation": "Any binomial $(x+y)^n$ where $n \\in \\mathbb{N}$ can be expanded as: $(x+y)^n = {}^nC_0 x^n y^0 + {}^nC_1 x^{n-1} y^1 + {}^nC_2 x^{n-2} y^2 + \\dots + {}^nC_n x^0 y^n$. In compact sigma notation: $(x+y)^n = \\sum_{r=0}^{n} {}^nC_r x^{n-r} y^r$.",
+            "importance": "High"
+          },
+          {
+            "concept": "Binomial Coefficients",
+            "explanation": "The coefficients of the terms are given by ${}^nC_r = \\frac{n!}{(n-r)! r!}$, representing the combinations of choosing $r$ elements from $n$.",
+            "importance": "High"
+          },
+          {
+            "concept": "Symmetry of Coefficients",
+            "explanation": "Because selecting $r$ elements is identical to leaving behind $n-r$ elements, the coefficients show symmetric values: ${}^nC_r = {}^{n}C_{n-r}$. For example, ${}^nC_0 = {}^nC_n$ and ${}^nC_1 = {}^nC_{n-1}$.",
+            "importance": "Medium"
+          }
+        ],
+        "diagrams": [
+          {
+            "type": "mindmap",
+            "title": "Binomial Expansion Mind Map",
+            "mermaidCode": "%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1e3a8a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#475569', 'secondaryColor': '#e0f2fe', 'tertiaryColor': '#bae6fd', 'fontFamily': 'Inter, system-ui, sans-serif', 'fontSize': '14px' }}}%%\ngraph TD\n    Root[\"Binomial Theorem (x+y)^n\"]\n    Root --> Formula[\"General Formula\"]\n    Formula --> Sigma[\"Sum from r=0 to n of nCr * x^(n-r) * y^r\"]\n    \n    Root --> Features[\"Key Properties\"]\n    Features --> Terms[\"Total terms = n + 1\"]\n    Features --> Powers[\"Sum of powers in each term = n\"]\n    Features --> Symmetry[\"Symmetric Coefficients: nCr = nC(n-r)\"]\n    \n    Root --> GeneralTerm[\"General Term\"]\n    GeneralTerm --> T_r[\"T_(r+1) = nCr * x^(n-r) * y^r\"]\n"
+          }
+        ],
+        "formulas": [
+          {
+            "name": "General Binomial Theorem",
+            "formula": "$$(x+y)^n = \\sum_{r=0}^{n} {}^nC_r x^{n-r} y^r$$",
+            "whenToUse": "To expand any algebraic binomial raised to a positive integer exponent.",
+            "commonMistake": "Writing $n$ terms instead of $n+1$ terms."
+          },
+          {
+            "name": "General Term ($T_{r+1}$)",
+            "formula": "$$T_{r+1} = {}^nC_r x^{n-r} y^r$$",
+            "whenToUse": "Used to find a specific term (like the 5th term) or to determine the coefficient of a specific power of $x$.",
+            "commonMistake": "Confusing the term number with the index $r$. For the $k$-th term, you must use $r = k-1$."
+          },
+          {
+            "name": "Binomial Coefficient Combination Formula",
+            "formula": "$${}^nC_r = \\frac{n!}{(n-r)! r!}$$",
+            "whenToUse": "Calculating the numerical values of coefficients.",
+            "commonMistake": "Calculating $0!$ as $0$ instead of $1$, which ruins calculations when $r=0$ or $r=n$."
+          }
+        ],
+        "activeRecallQuestions": [
+          {
+            "question": "How many terms are there in the expansion of $(2x + 5y)^{12}$, and what is the sum of exponents of $x$ and $y$ in the 8th term?",
+            "hint": "The number of terms is always $n+1$, and the sum of powers in any term of $(a+b)^n$ is always equal to $n$."
+          },
+          {
+            "question": "If you want to find the 6th term of $(x-2y)^{9}$, what value of $r$ will you substitute into the general term formula?",
+            "hint": "Remember that the general term is represented by $T_{r+1}$."
+          }
+        ],
+        "examples": [
+          {
+            "problem": "Find the 5th term in the expansion of $(2x + 3y)^7$.",
+            "solution": "We use the general term formula:\n$$T_{r+1} = {}^nC_r a^{n-r} b^r$$\n\nHere, the binomial is $(2x + 3y)^7$, which gives:\n- $a = 2x$\n- $b = 3y$\n- $n = 7$\n\nTo find the 5th term ($T_5$), we set $r = 4$:\n$$T_5 = T_{4+1} = {}^7C_4 (2x)^{7-4} (3y)^4$$\n\nFirst, calculate the binomial coefficient ${}^7C_4$:\n$${}^7C_4 = \\frac{7!}{4! \\times 3!} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$$\n\nNow substitute the values back:\n$$T_5 = 35 \\times (2x)^3 \\times (3y)^4$$\n$$T_5 = 35 \\times 8x^3 \\times 81y^4$$\n$$T_5 = (35 \\times 8 \\times 81) x^3 y^4 = 22680 x^3 y^4$$\n\nThus, the 5th term is $22680 x^3 y^4$."
+          }
+        ],
+        "commonMistakes": [
+          "Using $r = k$ for finding the $k$-th term. Always use $r = k-1$.",
+          "Forgetting to apply the exponent to the coefficient inside the term (e.g. writing $(2x)^3$ as $2x^3$ instead of $8x^3$).",
+          "Missing alternating signs when expanding $(x-y)^n$. The odd values of $r$ will produce negative terms.",
+          "Assuming the expansion of $(x+y)^n$ contains $n$ terms. It always contains $n+1$ terms."
+        ],
+        "quickRevision": "- **Expansion**: $(x+y)^n = \\sum_{r=0}^{n} {}^nC_r x^{n-r}y^r$\n- **Number of Terms**: $n+1$ terms.\n- **Powers**: Sum of exponents of $x$ and $y$ in each term is always $n$.\n- **General Term**: $T_{r+1} = {}^nC_r x^{n-r}y^r$.\n- **Symmetric Coefficients**: ${}^nC_r = {}^nC_{n-r}$.\n- **Sign changes**: In $(x-y)^n$, terms alternate in sign starting with positive (+, -, +, -, ...).",
+        "tags": [
+          "Mathematics",
+          "Algebra",
+          "Binomial Theorem",
+          "JEE Main",
+          "Class 11",
+          "CBSE"
+        ]
+      },
+      "sourceType": "image",
+      "formatRequested": "Markdown Notes",
+      "tokensUsed": {
+        "prompt": 2204,
+        "candidates": 2256,
+        "total": 7473
+      },
+      "estimatedCostINR": 0.07006480000000001,
+      "createdAt": "2026-06-13T12:36:56.621Z",
+      "folderId": "1781354446959",
+      "subfolderId": null
+    }
+  ],
+  "folders": [
+    {
+      "id": "1781354446959",
+      "name": "Maths",
+      "createdAt": "2026-06-13T12:40:46.959Z"
+    }
+  ],
+  "subfolders": []
+}

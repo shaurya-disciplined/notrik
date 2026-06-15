@@ -1,0 +1,22 @@
+{
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\lib\\db.ts": [],
+  "C:\\Users\\rahul123\\.gemini\\antigravity\\brain\\d4c01f8d-9b91-4ab5-94ab-ec7bfa6a9682\\task.md": [],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\app\\dashboard\\layout.tsx": [],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\app\\dashboard\\library\\structured-notes\\page.tsx": [
+    {
+      "original": "  const unorganizedNotes = notes?.filter((n: any) => !n.folderId && n.formatRequested !== 'Smart Flashcards' && ((n.title || '').toLowerCase().includes(searchQuery.toLowerCase()))) || [];",
+      "toReplace": "  const unorganizedNotes = notes?.filter((n: any) => !n.folderId && ((n.title || '').toLowerCase().includes(searchQuery.toLowerCase()))) || [];"
+    }
+  ],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\app\\dashboard\\page.tsx": [],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\app\\dashboard\\search\\page.tsx": [],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\app\\dashboard\\library\\smart-flashcards\\page.tsx": [],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\app\\dashboard\\planner\\page.tsx": [],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\app\\dashboard\\feedback\\page.tsx": [],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\app\\dashboard\\invite\\page.tsx": [],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\app\\dashboard\\trace\\page.tsx": [],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\app\\dashboard\\flashcards\\[id]\\page.tsx": [],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\components\\notes\\NoteViewer.tsx": [],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\components\\notes\\ConceptCard.tsx": [],
+  "c:\\Users\\rahul123\\Notesnap\\notesnap-app\\src\\components\\notes\\ExportModal.tsx": []
+}
